@@ -92,8 +92,7 @@ Metadata:
           - MuleSoftRtfIntegration
           - RTFFabricName
           - OrgID
-          - UserName
-          - Password
+          - ActivationData
           - MuleLicenseKeyinbase64
       - Label:
           default: Kubernetes add-ins
@@ -225,10 +224,8 @@ Metadata:
         default: Runtime Fabric name
       OrgID:
         default: Organization ID of your Anypoint
-      UserName:
-        default: Anypoint platform username
-      Password:
-        default: Anypoint platform password
+      ActivationData:
+        default: Anypoint platform activation data
       MuleLicenseKeyinbase64:
         default: MuleSoft license key in base64 format
       PrometheusIntegration:
@@ -714,14 +711,9 @@ Parameters:
     Type: String
     Description: Organization ID of your Anypoint.
     Default: ''
-  UserName:
+  ActivationData:
     Type: String
-    Description: Anypoint platform username.
-    NoEcho: true
-    Default: ''
-  Password:
-    Type: String
-    Description: Anypoint platform password.
+    Description: Anypoint platform activation data.
     NoEcho: true
     Default: ''
   MuleLicenseKeyinbase64:
@@ -862,8 +854,7 @@ Resources:
         MuleSoftRtfIntegration: !Ref MuleSoftRtfIntegration
         RTFFabricName: !Ref RTFFabricName
         OrgID: !Ref OrgID
-        UserName: !Ref UserName
-        Password: !Ref Password
+        ActivationData: !Ref ActivationData
         MuleLicenseKeyinbase64: !Ref MuleLicenseKeyinbase64
         # Kubernetes add-ins
         ProvisionLoadBalancerController: !Ref LoadBalancerController
